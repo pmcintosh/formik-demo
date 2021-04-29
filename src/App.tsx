@@ -38,10 +38,11 @@ function App() {
       <Box
         display="flex"
         width="100vw"
-        minHeight="200px"
+        minHeight="250px"
+        maxHeight="250px"
         overflow="auto"
         position="fixed"
-        bottom="10px"
+        bottom="0px"
       >
         <PrettyPrint values={formValues} />
       </Box>

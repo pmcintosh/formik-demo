@@ -5,6 +5,7 @@ import { FormValue } from "../models";
 const useStyles = makeStyles({
   root: {
     width: "100%",
+    paddingLeft: "0.8em",
   },
 });
 
