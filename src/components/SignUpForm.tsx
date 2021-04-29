@@ -23,7 +23,10 @@ const useStyles = makeStyles({
 });
 
 const SignUpSchema = yup.object().shape({
-  email: yup.string().email("Invalid email").required("Required"),
+  email: yup
+    .string()
+    .email("Invalid email address.")
+    .required("Email is required."),
   password: yup
     .string()
     .required("No password provided.")
