@@ -1,4 +1,3 @@
-import classes from "*.module.css";
 import { Box, Button, makeStyles, Paper, TextField } from "@material-ui/core";
 import { FormikValues, useFormik } from "formik";
 import React from "react";
@@ -32,7 +31,8 @@ const ExpenseFormSchema = yup.object().shape({
       "maxDigitsAfterDecimal",
       "Amount must have 2 digits after decimal or less",
       (number) => /^\d+(\.\d{1,2})?$/.test(number?.toString() ?? "")
-    ),
+    )
+    .typeError("Must be a number."),
 });
 
 export interface Props {
@@ -59,26 +59,28 @@ const ExpenseForm: React.FC<Props> = ({ onSubmit }: Props) => {
     <Box display="flex" width="100%">
       <Paper className={classes.root}>
         <form onSubmit={formik.handleSubmit}>
-          <TextField
-            id="description"
-            name="description"
-            label="Description"
-            fullWidth
-            variant="outlined"
-            error={formik.errors.description !== undefined}
-            helperText={formik.errors.description}
-            onChange={formik.handleChange}
-          />
-          <TextField
-            id="amount"
-            name="amount"
-            label="Amount"
-            fullWidth
-            variant="outlined"
-            error={formik.errors.amount !== undefined}
-            helperText={formik.errors.amount}
-            onChange={formik.handleChange}
-          />
+          <Box width="400px">
+            <TextField
+              id="description"
+              name="description"
+              label="Description"
+              fullWidth
+              variant="outlined"
+              error={formik.errors.description !== undefined}
+              helperText={formik.errors.description}
+              onChange={formik.handleChange}
+            />
+            <TextField
+              id="amount"
+              name="amount"
+              label="Amount"
+              fullWidth
+              variant="outlined"
+              error={formik.errors.amount !== undefined}
+              helperText={formik.errors.amount}
+              onChange={formik.handleChange}
+            />
+          </Box>
           <Button color="primary" variant="contained" type="submit">
             Submit
           </Button>
