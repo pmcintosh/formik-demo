@@ -4,6 +4,7 @@ import SignUpForm from "./components/SignUpForm";
 import PrettyPrint from "./components/PrettyPrint";
 import { AppBar, Box, makeStyles, Tab, Tabs } from "@material-ui/core";
 import ExpenseForm from "./components/ExpenseForm";
+import NamesForm from "./components/NamesForm";
 
 const useStyles = makeStyles({
   root: {
@@ -26,6 +27,7 @@ function App() {
         >
           <Tab label="Example One" />
           <Tab label="Example Two" />
+          <Tab label="Example Three" />
         </Tabs>
       </AppBar>
       {currentTab === 0 && (
@@ -33,6 +35,9 @@ function App() {
       )}
       {currentTab === 1 && (
         <ExpenseForm onSubmit={(values) => setFormValues(values)} />
+      )}
+      {currentTab === 2 && (
+        <NamesForm onSubmit={(values) => setFormValues(values)} />
       )}
 
       <Box
