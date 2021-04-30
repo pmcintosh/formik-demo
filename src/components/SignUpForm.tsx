@@ -63,7 +63,7 @@ const SignUpForm: React.FC<Props> = ({ onSubmit }: Props) => {
     <Box display="flex" width="100%">
       <Paper className={classes.root}>
         <form onSubmit={formik.handleSubmit}>
-          <Box>
+          <Box width="400px">
             <TextField
               id="email"
               name="email"
