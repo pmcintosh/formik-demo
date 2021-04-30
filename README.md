@@ -6,6 +6,8 @@ A small app showing three examples of forms using Formik and Yup.
 
 [Formik](https://formik.org/) provides management of form state, validation, and a lot of other help.
 
+![Preview](/preview.png)
+
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
